@@ -235,6 +235,8 @@ docker run -p 8082:8082 order-service
 
 ## 📝 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 This project is for educational/demonstration purposes.
 
 ## 🤝 Contributing
