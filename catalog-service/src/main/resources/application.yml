@@ -1,0 +1,35 @@
+server:
+  port: 8081
+  # Virtual Threads for high-concurrency geo-searches
+  threads:
+    virtual:
+      enabled: true
+
+spring:
+  application:
+    name: catalog-service
+
+  datasource:
+    # Use environment variables so Docker can override them
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/delivery_mesh}
+    username: ${SPRING_DATASOURCE_USERNAME:teetotaler_admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:clean_code_only}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    # Hibernate Spatial 7.x automatically enhances PostgreSQL dialect
+    # No need to specify PostgisDialect - it's auto-detected
+    hibernate:
+      ddl-auto: update
+    show-sql: false # Set to true only for local debugging
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 20 # Optimized for bulk inserts of vendors
+
+  # Logging levels for troubleshooting spatial queries
+  logging:
+    level:
+      org.hibernate.SQL: INFO
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE

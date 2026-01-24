@@ -1,0 +1,114 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  # REDIS CONFIGURATION (Temporarily disabled - rate limiting disabled)
+  # data:
+  #   redis:
+  #     host: ${REDIS_HOST:localhost}
+  #     port: 6379
+
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders: "*"
+      
+      routes:
+        # Route 1: Catalog Service
+        - id: catalog-service
+          uri: ${CATALOG_SERVICE_URI:http://localhost:8081}
+          predicates:
+            - Path=/api/catalog/**
+          filters:
+            # 1. Circuit Breaker
+            - name: CircuitBreaker
+              args:
+                name: catalogCB
+                fallbackUri: forward:/fallback/catalog
+            # 2. Rate Limiter (Temporarily disabled due to Spring Boot 4.0.1 Redis auto-config issue)
+            # - name: RequestRateLimiter
+            #   args:
+            #     key-resolver: "#{@ipKeyResolver}"
+            #     redis-rate-limiter.replenishRate: 5
+            #     redis-rate-limiter.burstCapacity: 10
+
+        # Route 2: Order Service
+        - id: order-service
+          uri: ${ORDER_SERVICE_URI:http://localhost:8082}
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: orderCB
+                fallbackUri: forward:/fallback/orders
+            # Rate Limiter temporarily disabled
+            # - name: RequestRateLimiter
+            #   args:
+            #     key-resolver: "#{@ipKeyResolver}"
+            #     redis-rate-limiter.replenishRate: 10
+            #     redis-rate-limiter.burstCapacity: 20
+
+        # Route 3: Geofence Service
+        - id: geofence-service
+          uri: ${GEOFENCE_SERVICE_URI:http://localhost:8083}
+          predicates:
+            - Path=/api/riders/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: geofenceCB
+                fallbackUri: forward:/fallback/geofence
+
+# Resilience4j Configuration
+resilience4j:
+  circuitbreaker:
+    instances:
+      catalogCB:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+      orderCB:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+      geofenceCB:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET:your-secret-key-change-this-in-production-min-256-bits-for-hmac-sha-algorithms}
+
+# Basic Authentication Configuration
+gateway:
+  auth:
+    username: ${GATEWAY_USERNAME:admin}
+    password: ${GATEWAY_PASSWORD:admin}
+
+# Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, gateway
+  endpoint:
+    health:
+      show-details: always
