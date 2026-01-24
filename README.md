@@ -2,6 +2,12 @@
 
 A real-time microservices-based delivery management system with geofencing, order tracking, and live mesh network visualization.
 
+## 📸 Dashboard Screenshot
+
+![Dashboard UI](docs/screenshots/dashboard.png)
+
+*Real-time delivery dashboard showing live map visualization, active riders, order management, and mesh network activity*
+
 ## 🏗️ Architecture
 
 This system consists of multiple microservices working together:
